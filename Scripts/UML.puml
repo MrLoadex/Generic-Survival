@@ -1,0 +1,52 @@
+@startuml
+
+class UIManager {
+    - playerHealthBar : Image
+    - deathPanel : GameObject
+    + RevivePlayer() : void
+    + replyPlayerHealthUpdate(actual: float, max: float) : void
+    + replyPlayerDeath() : void
+    + replyPlayerRevive() : void
+}
+
+class LifePlayer {
+    - defeated : bool
+    - canBeHealed : bool
+    + Heal(amount: float) : void
+    + replyPlayerRevive() : void
+    + updateHealthBar(currentLife: float, maxLife: float) : void
+    + characterDefeated() : void
+}
+
+class LifeBase {
+    - initialLife : float
+    - maxLife : float
+    + takeDamage(count: float) : void
+    + updateHealthBar(currentLife: float, maxLife: float) : void
+    + characterDefeated() : void
+}
+
+
+class PlayerMovementController {
+    - walkSpeed : float
+    - runSpeed : float
+    - mouseSensitivity : float
+    - jumpForce : float
+    + ProcessMovement() : void
+    + ProcessRotation() : void
+    + replyPlayerDeath() : void
+    + replyPlayerRevive() : void
+}
+
+class PlayerEvents {
+    + HealtUpdate : Action<float, float>
+    + Death : Action
+    + Revive : Action
+}
+
+LifePlayer --|> LifeBase
+LifePlayer --> PlayerEvents
+UIManager --> PlayerEvents
+PlayerMovementController --> PlayerEvents
+
+@enduml

@@ -1,3 +1,16 @@
+/*
+Crea un controlador de movimiento para un jugador en primera persona en Unity con las siguientes características:
+- Movimiento básico (caminar y correr)
+- Salto
+- Rotación de cámara con el ratón
+- Gravedad personalizada
+- Comprobación de si está en el suelo
+- Ocultar y bloquear el cursor del ratón
+- Utiliza CharacterController para el movimiento
+- Incluye SerializeField para ajustar parámetros desde el Inspector
+- Escucha el evento de muerte del jugador y se desactiva cuando se invoca
+*/
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,6 +42,10 @@ public class PlayerMovementController : MonoBehaviour
         // Ocultar el cursor al iniciar el juego
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        // Escuchar el evento de muerte del jugador
+        PlayerEvents.Death += replyPlayerDeath;
+        PlayerEvents.Revive += replyPlayerRevive;
     }
 
     private void Update()
@@ -93,4 +110,19 @@ public class PlayerMovementController : MonoBehaviour
 
         mainCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
+
+    #region EVENTS
+    // Metodo para manejar el evento de muerte del jugador
+    private void replyPlayerDeath()
+    {
+        this.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void replyPlayerRevive()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        this.enabled = true;
+    }
+    #endregion
 }
