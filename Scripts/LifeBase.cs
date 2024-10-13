@@ -6,7 +6,7 @@ public class LifeBase : MonoBehaviour
     [SerializeField] protected float maxLife;
 
     public float currentLife {get; protected set;}
-    // Start is called before the first frame update
+
     protected void Start()
     {
         currentLife = initialLife;
