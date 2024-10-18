@@ -468,11 +468,10 @@ GameObject:
   - component: {fileID: 306422755}
   - component: {fileID: 306422754}
   - component: {fileID: 306422753}
-  - component: {fileID: 306422752}
-  - component: {fileID: 306422760}
-  - component: {fileID: 306422757}
-  - component: {fileID: 306422758}
   - component: {fileID: 306422759}
+  - component: {fileID: 306422762}
+  - component: {fileID: 306422761}
+  - component: {fileID: 306422760}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -480,24 +479,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &306422752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306422751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c19575cecaf9adc44aff8cec0f29b2ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 5
-  runSpeed: 8
-  mouseSensitivity: 300
-  jumpForce: 3
-  mainCamera: {fileID: 2033167390734955771}
-  gravityMultiplier: 2.5
 --- !u!143 &306422753
 CharacterController:
   m_ObjectHideFlags: 0
@@ -591,32 +572,6 @@ Transform:
   - {fileID: 340474311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &306422757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306422751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47a0bf5f73a9ef441990969e299e2c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialLife: 100
-  maxLife: 100
---- !u!114 &306422758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306422751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b7d84321f5a47448a48a6c8ef0b1313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &306422759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +588,7 @@ MonoBehaviour:
   hunger: 100
   fatigue: 0
   damagePerSecond: 10
+  healPerSecond: 2
 --- !u!114 &306422760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,9 +598,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 306422751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b7d84321f5a47448a48a6c8ef0b1313, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a810463f11e8b242b68c7cb2d4f8708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSpeed: 5
+  runSpeed: 8
+  mouseSensitivity: 100
+  jumpForce: 3
+  mainCamera: {fileID: 2033167390734955771}
+  gravityMultiplier: 2.5
+--- !u!114 &306422761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306422751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5861b72040bd3c548876119314f1059c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &306422762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306422751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269dd27e77864a747a82523c29aa3fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialLife: 0
+  maxLife: 0
 --- !u!1 &332230829
 GameObject:
   m_ObjectHideFlags: 0
