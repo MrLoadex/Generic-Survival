@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb164611c4a2dd4b96d4c8b8062d018, type: 3}
+  m_Name: Bread
+  m_EditorClassIdentifier: 
+  id: Bread
+  _name: Bread
+  craftingDescription: 3 of wheat
+  description: It is a bread, double click to consume this.
+  icon: {fileID: 21300000, guid: d6352aef86d0cfa4cbbf000d0536f301, type: 3}
+  weight: 1
+  type: 2
+  isStackable: 1
+  count: 1
+  stackSize: 99
+  droppedItem: {fileID: 9066902329819592177, guid: 444f779264e12844ca8e4265bd97fdd9, type: 3}
+  selectedGO: {fileID: 0}
+  canUse: 1
+  canEquip: 0
+  consumableType: 2
+  value: 10

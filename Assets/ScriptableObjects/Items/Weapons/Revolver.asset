@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148f0c011d151f84aa18cfd1bcdebc3a, type: 3}
+  m_Name: Revolver
+  m_EditorClassIdentifier: 
+  id: Revolver
+  _name: Revolver
+  craftingDescription: 1 Wood y otras cosas
+  description: It is a revolver
+  icon: {fileID: 21300000, guid: bc9055afe9062724f9fdd0f740c6b748, type: 3}
+  weight: 6
+  type: 0
+  isStackable: 0
+  count: 1
+  stackSize: 1
+  droppedItem: {fileID: 5309305983515701450, guid: 79ae5256f8e12ad40aff701d2c9aadd6, type: 3}
+  selectedGO: {fileID: 429315375786609126, guid: 79ae5256f8e12ad40aff701d2c9aadd6, type: 3}
+  canUse: 1
+  canEquip: 0
+  _weaponType: 6
+  _damage: 15
+  _durability: 100
+  _range: 100
+  _attackSpeed: 2
+  _critChance: 10
+  _critMultiplier: 2
+  _attackCooldown: 1.5

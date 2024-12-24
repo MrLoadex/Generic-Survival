@@ -1,0 +1,88 @@
+@startuml
+
+class SystemEvents {
+    + changeController : Action<PlayerController>
+    - checkControls() : IEnumerator<YieldInstruction>
+}
+SystemEvents --> PlayerController
+
+class UIManager {
+    - playerHealthBar : Image
+    - deathPanel : GameObject
+    + RevivePlayer() : void
+    + replyPlayerHealthUpdate(actual: float, max: float) : void
+    + replyPlayerDeath() : void
+    + replyPlayerRevive() : void
+}
+UIManager --> PlayerEvents
+class LifePlayer {
+    - defeated : bool
+    - canBeHealed : bool
+    + Heal(amount: float) : void
+    + replyPlayerRevive() : void
+    + updateHealthBar(currentLife: float, maxLife: float) : void
+    + characterDefeated() : void
+}
+LifePlayer --|> LifeBase
+LifePlayer --> PlayerEvents
+
+class LifeBase {
+    - initialLife : float
+    - maxLife : float
+    + takeDamage(count: float) : void
+    + updateHealthBar(currentLife: float, maxLife: float) : void
+    + characterDefeated() : void
+}
+
+class PlayerMovementController {
+    - walkSpeed : float
+    - runSpeed : float
+    - mouseSensitivity : float
+    - jumpForce : float
+    - playerController : controller
+    - ProcessMovement() : void
+    - ProcessRotation() : void
+    - replyPlayerDeath() : void
+    - replyPlayerRevive() : void
+    - replyChangeController(controller: PlayerController) : void
+}
+PlayerMovementController --> PlayerEvents
+PlayerMovementController --o PlayerController
+PlayerMovementController --> SystemEvents
+
+abstract class PlayerController {
+    + ProcessMovement() : bool
+    + ProcessRotation() : bool
+}
+
+class PlayerKeyboardController extends PlayerController {
+    + ProcessMovement() : bool
+    + ProcessRotation() : bool
+}
+
+class PlayerJoystickController extends PlayerController {
+    + ProcessMovement() : bool
+    + ProcessRotation() : bool
+}
+
+class PlayerTellphoneController extends PlayerController {
+    + ProcessMovement() : bool
+    + ProcessRotation() : bool
+}
+
+class PlayerEvents {
+    + HealtUpdate : Action<float, float>
+    + Death : Action
+    + Revive : Action
+    + StatsUpdate : Action<float, float, float>
+    + Run : Action
+    + TakeDamage : Action<float>
+    + Heal : Action<float>
+    + Exhausted : Action
+    + Rested : Action
+    + Drink : Action<float>
+    + Eat : Action<float>
+    + Rest : Action<float>
+}
+
+@enduml

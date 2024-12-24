@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb164611c4a2dd4b96d4c8b8062d018, type: 3}
+  m_Name: GlassOfWater
+  m_EditorClassIdentifier: 
+  id: Glass Of Water
+  _name: Galss Of Water
+  craftingDescription: pickup water with a glass
+  description: It is a water, consume with double click.
+  icon: {fileID: 21300000, guid: 238516730d1a0114684fda7d6a9a5874, type: 3}
+  weight: 1
+  type: 2
+  isStackable: 1
+  count: 1
+  stackSize: 99
+  droppedItem: {fileID: 3894518391321904810, guid: bd1c012cbf2719347b155ecbe34e3793, type: 3}
+  selectedGO: {fileID: 0}
+  canUse: 1
+  canEquip: 0
+  consumableType: 1
+  value: 10
